@@ -123,5 +123,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\closeicon.png" />
+    <Resource Include="Images\closeicon2.png" />
+    <Resource Include="Images\minimizeicon.png" />
+    <Resource Include="Images\minimizeicon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\maximizeicon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

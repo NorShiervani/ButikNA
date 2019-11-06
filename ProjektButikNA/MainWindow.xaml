@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektButikNA"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"  Foreground="White">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Height="600" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -30,62 +30,62 @@
         </EventTrigger>
     </Window.Triggers>
 
-    <Grid Background ="LightGray">
-        <Grid Height="100" VerticalAlignment="Top" Background="#FF30D4EB">
-            <TextBlock Text="Butiken NA" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="ExtraBold"/>
-            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="NA" VerticalAlignment="Center" FontSize="20"/>
-                <materialDesign:PopupBox  Margin="10" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
-                    <StackPanel Width="150">
-                        <Button Content="Account" />
-                        <Button Content="dicscount kupong" />
-                        <Button Content="Creat account" />
-                        <Separator/>
-                        <Button x:Name="ButtonPopUp" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Height="38" Content="LogOut" Click="ButtonPopUp_Click"/>
-                    </StackPanel>
-                </materialDesign:PopupBox>
-            </StackPanel>
+    <Grid Background ="White">
+        <Grid Height="70" VerticalAlignment="Top" Background="Purple">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Butik NA" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="imgMinimize" Height="15" Width="15"  Source="Images\minimizeicon.png" MouseLeftButtonDown="MinimizeWindow" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Image x:Name="imgMaximize" Height="15" Width="15" Source="Images\maximizeicon.png" MouseLeftButtonDown="MaximizeWindow" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Image x:Name="imgClose" Height="15" Width="15" Source="Images\closeicon.png" MouseLeftButtonDown="CloseWindow" Grid.Column="2" />
+            </Grid>
         </Grid>
 
-        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF30D4EB">
+        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="Purple">
             <StackPanel>
-                <Grid Height="100" Background="White">
-                    <Button x:Name="ButtonCloseMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="ButtonCloseMenu_Click" >
-                        <materialDesign:PackIcon Foreground="#FF30D4EB" Kind="ArrowLeft" Width="25" Height="25"/>
+                <Grid Height="70" Background="White">
+                    <Button x:Name="ButtonCloseMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="Collapsed" Click="ButtonCloseMenu_Click" >
+                        <materialDesign:PackIcon Foreground="Purple" Kind="ArrowLeft" Width="25" Height="25"/>
                     </Button>
-                    <Button x:Name="ButtonOpenMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="Top" HorizontalAlignment="Right" Click="ButtonOpenMenu_Click">
-                        <materialDesign:PackIcon Foreground="#FF30D4EB" Kind="Menu" Width="25" Height="25"/>
+                    <Button x:Name="ButtonOpenMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="Center" HorizontalAlignment="Center" Click="ButtonOpenMenu_Click">
+                        <materialDesign:PackIcon Foreground="Purple" Kind="Menu" Width="25" Height="25"/>
                     </Button>
                 </Grid>
                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF30D4EB">
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ViewDashboard" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Background="AliceBlue"/>
+                            <materialDesign:PackIcon Kind="ViewDashboard" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Background="Purple" Foreground="White"/>
                             <TextBlock Text="Home" Foreground="AliceBlue" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Pencil" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Background="AliceBlue"/>
-                            <TextBlock Text="Order" Foreground="AliceBlue"  VerticalAlignment="Center" Margin="20 10"/>
+                            <materialDesign:PackIcon Kind="Pencil" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="New Order" Foreground="AliceBlue"  VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Ticket" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Background="AliceBlue"/>
-                            <TextBlock Text="Product" Foreground="AliceBlue" VerticalAlignment="Center" Margin="20 10"/>
+                            <materialDesign:PackIcon Kind="Ticket" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Coupons" Foreground="AliceBlue" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Background="AliceBlue"/>
-                            <TextBlock Text="Message" Foreground="AliceBlue"  VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="GithubBox" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Background="AliceBlue"/>
-                            <TextBlock Text="Complete Purchase" Foreground="AliceBlue"  VerticalAlignment="Center" Margin="20 10"/>
+                            <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Order History" Foreground="AliceBlue"  VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

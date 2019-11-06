@@ -25,11 +25,6 @@ namespace ProjektButikNA
             InitializeComponent();
         }
 
-        private void ButtonPopUp_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
         private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
         {
             ButtonOpenMenu.Visibility = Visibility.Visible;
@@ -40,6 +35,23 @@ namespace ProjektButikNA
         {
             ButtonOpenMenu.Visibility = Visibility.Collapsed;
             ButtonCloseMenu.Visibility = Visibility.Visible;
+        }
+
+        private void CloseWindow(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizeWindow(object sender, MouseButtonEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void MaximizeWindow(object sender, MouseButtonEventArgs e)
+        {
+            WindowState = WindowState == WindowState.Maximized
+                         ? WindowState.Normal
+                         : WindowState.Maximized;
         }
     }
 }
