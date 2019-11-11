@@ -74,10 +74,23 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Coupon.cs" />
+    <Compile Include="CouponsWindow.xaml.cs">
+      <DependentUpon>CouponsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewPurchase.xaml.cs">
       <DependentUpon>NewPurchase.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OrderHistory.xaml.cs">
+      <DependentUpon>OrderHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrderWindow.xaml.cs">
+      <DependentUpon>OrderWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShoppingCart.cs" />
+    <Page Include="CouponsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,6 +104,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NewPurchase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrderHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -121,7 +142,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\closeicon.png" />

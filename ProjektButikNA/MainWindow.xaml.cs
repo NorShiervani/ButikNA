@@ -53,5 +53,20 @@ namespace ProjektButikNA
                          ? WindowState.Normal
                          : WindowState.Maximized;
         }
+
+        private void ShowCoupons(object sender, RoutedEventArgs e)
+        {
+            PageContainer.Content = new CouponsWindow();
+        }
+
+        private void ShowNewOrder(object sender, RoutedEventArgs e)
+        {
+            PageContainer.Content = new OrderWindow();
+        }
+
+        private void ShowOrderHistory(object sender, RoutedEventArgs e)
+        {
+            PageContainer.Content = new OrderHistory();
+        }
     }
 }

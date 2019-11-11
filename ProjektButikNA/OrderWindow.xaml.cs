@@ -10,23 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ProjektButikNA
 {
     /// <summary>
-    /// Interaction logic for NewPurchase.xaml
+    /// Interaction logic for OrderWindow.xaml
     /// </summary>
-    public partial class NewPurchase : Window
+    public partial class OrderWindow : Page
     {
-        public NewPurchase()
+        public OrderWindow()
         {
             InitializeComponent();
-        }
-
-        private void test(object sender, MouseButtonEventArgs e)
-        {
-            this.Close();
         }
     }
 }

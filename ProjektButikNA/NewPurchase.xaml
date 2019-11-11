@@ -13,7 +13,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Label Content="New purchase" FontSize="30" Foreground="Purple" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Label Content="New purchase" FontSize="30" Foreground="Purple" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
         <Grid ShowGridLines="False" Grid.Column="1" Grid.Row="1">
             <Grid.ColumnDefinitions>
