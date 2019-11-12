@@ -63,10 +63,8 @@
             </Grid>
         </Grid>
 
-        <Grid HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" Grid.RowSpan="1">
-            <Frame x:Name="PageContainer" NavigationUIVisibility="Hidden"/>
-        </Grid>
-        
+        <Frame x:Name="PageContainer" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="2"/>
+
         <Grid x:Name="GridMenu" HorizontalAlignment="Left" Background="Purple" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Width="60">
             <StackPanel>
                 <Grid Height="70" Background="White">
