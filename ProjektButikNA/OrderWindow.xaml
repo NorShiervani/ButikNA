@@ -30,9 +30,41 @@
             <TextBlock Text="Filter by product name:" FontSize="16" Foreground="Purple" Grid.Column="0" VerticalAlignment="Center" />
             <TextBox FontSize="16" Foreground="Purple" Grid.Column="2" VerticalAlignment="Center" />
         </Grid>
-        <DataGrid Grid.Column="0" Grid.Row="2" Grid.RowSpan="2"/>
+        <DataGrid x:Name="dgvProducts" Grid.Column="0" Grid.Row="2" Grid.RowSpan="2" HorizontalAlignment="Left" IsReadOnly="true">
+            <DataGrid.Resources>
+                <Style TargetType="{ x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Purple" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="Height" Value="30" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Width="*"/>
+                <DataGridTextColumn Header="Price" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
         <TextBlock Text="Added products:" FontSize="16" Foreground="Purple" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" />
-        <DataGrid Grid.Column="2" Grid.Row="2" />
+        <DataGrid x:Name="dgvProductsInCart" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" IsReadOnly="true">
+            <DataGrid.Resources>
+                <Style TargetType="{ x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Purple" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="Height" Value="30" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Width="*"/>
+                <DataGridTextColumn Header="Price" Width="*" />
+                <DataGridTextColumn Header="Amount" Width="*" />
+                <DataGridTextColumn Header="Total cost" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Grid Grid.Column="2" Grid.Row="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -51,7 +83,7 @@
             <TextBlock Text="0.00$" FontSize="16" Foreground="Purple" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right"/>
         </Grid>
 
-        <Button Width="140" Height="30" FontSize="14" Grid.Column="0" Grid.Row="4" Content="Add product" Background="Purple" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" />
-        <Button Width="140" Height="30" FontSize="14" Grid.Column="2" Grid.Row="4" Content="Confirm order" Background="Purple" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <Button Width="130" Height="30" FontSize="14" Grid.Column="0" Grid.Row="4" Content="Add product" Background="Purple" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <Button Width="130" Height="30" FontSize="14" Grid.Column="2" Grid.Row="4" Content="Confirm order" Background="Purple" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" />
     </Grid>
 </Page>

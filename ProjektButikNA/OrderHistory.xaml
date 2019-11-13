@@ -29,7 +29,25 @@
                 <DatePicker FontSize="16" Foreground="Purple" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" />
                 <Button Width="140" Height="30" FontSize="14" Grid.Column="4" Content="Search" Background="Purple" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" />
             </Grid>
-            <DataGrid Grid.Row="2"></DataGrid>
+            <DataGrid x:Name="dgvOrderHistory" Grid.Row="2" HorizontalAlignment="Left" IsReadOnly="true">
+                <DataGrid.Resources>
+                    <Style TargetType="{ x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="Purple" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="Height" Value="30" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="#" Width="0.5*"/>
+                    <DataGridTextColumn Header="Date created" Width="*" />
+                    <DataGridTextColumn Header="Items" Width="*" />
+                    <DataGridTextColumn Header="Coupon" Width="*" />
+                    <DataGridTextColumn Header="Total cost" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
     </Border>
     

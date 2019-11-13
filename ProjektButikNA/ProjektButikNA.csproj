@@ -77,9 +77,6 @@
     <Compile Include="CouponsWindow.xaml.cs">
       <DependentUpon>CouponsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NewPurchase.xaml.cs">
-      <DependentUpon>NewPurchase.xaml</DependentUpon>
-    </Compile>
     <Compile Include="OrderHistory.xaml.cs">
       <DependentUpon>OrderHistory.xaml</DependentUpon>
     </Compile>
@@ -103,10 +100,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="NewPurchase.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="OrderHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -23,6 +23,7 @@ namespace ProjektButikNA
         public CouponsWindow()
         {
             InitializeComponent();
+            dgvCoupons.Items.Add(new Coupon("WEJIOQWEWE", 0.22));
         }
     }
 }

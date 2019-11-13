@@ -14,7 +14,26 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
         <TextBlock Text="Coupons" FontSize="25" Foreground="Purple" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <DataGrid Grid.Row="2"></DataGrid>
+
+        
+        
+        <DataGrid x:Name="dgvCoupons" Grid.Row="2" HorizontalAlignment="Left" IsReadOnly="true">
+            <DataGrid.Resources>
+                <Style TargetType="{ x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Purple" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="Height" Value="30" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Coupon code" Width="2*"/>
+                <DataGridTextColumn Header="Discount (%)" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
