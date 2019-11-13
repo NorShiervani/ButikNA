@@ -30,6 +30,7 @@ namespace ProjektButikNA
             ButtonOpenMenu.Visibility = Visibility.Visible;
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
         }
+        //jjfjfjjf
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
