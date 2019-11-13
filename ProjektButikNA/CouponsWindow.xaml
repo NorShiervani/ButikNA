@@ -11,9 +11,10 @@
     <Grid Margin="15">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
+            <RowDefinition Height="50" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Coupons" FontSize="25" Foreground="Purple" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <DataGrid Grid.Row="1"></DataGrid>
+        <DataGrid Grid.Row="2"></DataGrid>
     </Grid>
 </Page>
