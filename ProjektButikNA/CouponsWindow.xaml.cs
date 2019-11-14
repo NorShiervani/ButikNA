@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace ProjektButikNA
 {
@@ -20,10 +24,19 @@ namespace ProjektButikNA
     /// </summary>
     public partial class CouponsWindow : Page
     {
+
         public CouponsWindow()
         {
             InitializeComponent();
-            dgvCoupons.Items.Add(new Coupon("WEJIOQWEWE", 0.22));
+            LoadCoupons();
+        }
+
+        void LoadCoupons()
+        {
+            foreach (Coupon coupon in Coupon.GetCoupons())
+            {
+                dgvCoupons.Items.Add(coupon);
+            }
         }
     }
 }

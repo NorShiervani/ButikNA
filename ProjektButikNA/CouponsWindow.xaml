@@ -28,11 +28,23 @@
                     <Setter Property="Height" Value="30" />
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                 </Style>
+                <Style TargetType="{ x:Type DataGridCell}">
+                    <Setter Property="Background" Value="White" />
+                    <Setter Property="Foreground" Value="Purple" />
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="Height" Value="30" />
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                </Style>
+                <Style TargetType="{ x:Type DataGridRow}">
+                    <Setter Property="Background" Value="White" />
+                    <Setter Property="BorderBrush" Value="Purple"/>
+                </Style>
             </DataGrid.Resources>
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Coupon code" Width="2*"/>
-                <DataGridTextColumn Header="Discount (%)" Width="*" />
+                <DataGridTextColumn Header="Coupon code" Binding="{Binding Code}" Width="2*"/>
+                <DataGridTextColumn Header="Discount (%)" Binding="{Binding Discount}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -23,6 +23,15 @@ namespace ProjektButikNA
         public OrderWindow()
         {
             InitializeComponent();
+            LoadProducts();
+        }
+
+        void LoadProducts()
+        {
+            foreach (Product product in Product.GetProducts())
+            {
+                dgvProducts.Items.Add(product);
+            }
         }
     }
 }
