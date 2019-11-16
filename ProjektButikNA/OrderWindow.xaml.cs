@@ -33,5 +33,15 @@ namespace ProjektButikNA
                 dgvProducts.Items.Add(product);
             }
         }
+
+        private void FilterProductList(object sender, TextChangedEventArgs e)
+        {
+            dgvProducts.Items.Clear();
+
+            foreach (Product product in Product.GetProductsByFilter(txtbFilterProducts.Text))
+            {
+                dgvProducts.Items.Add(product);
+            }
+        }
     }
 }

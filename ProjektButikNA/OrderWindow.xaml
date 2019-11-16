@@ -28,7 +28,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <TextBlock Text="Filter by product name:" FontSize="16" Foreground="Purple" Grid.Column="0" VerticalAlignment="Center" />
-            <TextBox FontSize="16" Foreground="Purple" Grid.Column="2" VerticalAlignment="Center" />
+            <TextBox x:Name="txtbFilterProducts" FontSize="16" Foreground="Purple" Grid.Column="2" VerticalAlignment="Center" TextChanged="FilterProductList" />
         </Grid>
         <DataGrid x:Name="dgvProducts" Grid.Column="0" Grid.Row="2" Grid.RowSpan="2" HorizontalAlignment="Left" IsReadOnly="true">
             <DataGrid.Resources>

@@ -38,9 +38,8 @@ namespace ProjektButikNA
             }
         }
 
-        public static List<Coupon> GetCoupons()
+        private static XmlDocument GetCouponXmlDocument()
         {
-            List<Coupon> coupons = new List<Coupon>();
             XmlDocument doc = new XmlDocument();
 
             if (!File.Exists(FILE_PATH))
@@ -48,11 +47,19 @@ namespace ProjektButikNA
                 using (var stream = new FileStream(FILE_PATH, FileMode.Create))
                 {
                     XmlSerializer XML = new XmlSerializer(typeof(List<Coupon>));
-                    XML.Serialize(stream, coupons);
+                    XML.Serialize(stream, new List<Coupon>());
                 }
             }
 
             doc.Load(FILE_PATH);
+
+            return doc;
+        }
+
+        public static List<Coupon> GetCoupons()
+        {
+            List<Coupon> coupons = new List<Coupon>();
+            XmlDocument doc = GetCouponXmlDocument();
 
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {

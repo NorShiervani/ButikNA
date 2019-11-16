@@ -38,9 +38,8 @@ namespace ProjektButikNA
             }
         }
 
-        public static List<Product> GetProducts()
+        private static XmlDocument GetProductXmlDocument()
         {
-            List<Product> products = new List<Product>();
             XmlDocument doc = new XmlDocument();
 
             if (!File.Exists(FILE_PATH))
@@ -48,11 +47,19 @@ namespace ProjektButikNA
                 using (var stream = new FileStream(FILE_PATH, FileMode.Create))
                 {
                     XmlSerializer XML = new XmlSerializer(typeof(List<Product>));
-                    XML.Serialize(stream, products);
+                    XML.Serialize(stream, new List<Product>());
                 }
             }
 
             doc.Load(FILE_PATH);
+
+            return doc;
+        }
+
+        public static List<Product> GetProducts()
+        {
+            List<Product> products = new List<Product>();
+            XmlDocument doc = GetProductXmlDocument();
 
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
@@ -66,28 +73,21 @@ namespace ProjektButikNA
 
         public static List<Product> GetProductsByFilter(string filter)
         {
-            List<Product> coupons = new List<Product>();
-            XmlDocument doc = new XmlDocument();
-
-            if (!File.Exists(FILE_PATH))
-            {
-                using (var stream = new FileStream(FILE_PATH, FileMode.Create))
-                {
-                    XmlSerializer XML = new XmlSerializer(typeof(List<Product>));
-                    XML.Serialize(stream, coupons);
-                }
-            }
-
-            doc.Load(FILE_PATH);
+            List<Product> filteredProducts = new List<Product>();
+            XmlDocument doc = GetProductXmlDocument();
 
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
                 string name = node["Name"].InnerText;
                 double price = double.Parse(node["Price"].InnerText);
-                coupons.Add(new Product(name, price));
+
+                if (name.ToLower().Contains(filter.ToLower()))
+                {
+                    filteredProducts.Add(new Product(name, price));
+                }
             }
 
-            return coupons;
+            return filteredProducts;
         }
     }
 }
