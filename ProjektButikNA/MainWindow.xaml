@@ -31,7 +31,7 @@
     </Window.Triggers>
 
 
-    <Grid Background ="White">
+    <Grid Background ="White" MouseDown="Grid_MouseDown">
         <Grid.RowDefinitions>
             <RowDefinition Height="70" />
             <RowDefinition Height="*" />
