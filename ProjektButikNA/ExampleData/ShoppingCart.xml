@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<ArrayOfShoppingCart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ShoppingCart>
+    <ShoppingCartId>65f4b434-2b8d-4e9e-9892-02e8bb8dd391</ShoppingCartId>
+    <Products>
+      <ProductInCart>
+        <PID>LPQW90EI931</PID>
+        <Name>Legion By Lenovo Y540 15.6" Gaming Laptop</Name>
+        <Price>849</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+      <ProductInCart>
+        <PID>LPQW90EI931</PID>
+        <Name>Legion By Lenovo Y540 15.6" Gaming Laptop</Name>
+        <Price>849</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+      <ProductInCart>
+        <PID>LPQW90EI931</PID>
+        <Name>Legion By Lenovo Y540 15.6" Gaming Laptop</Name>
+        <Price>849</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+    </Products>
+    <Coupon>
+      <Code>1224C4C</Code>
+      <Discount>0.29</Discount>
+    </Coupon>
+    <DateRegistered>2019-11-17T19:21:41.6656212+01:00</DateRegistered>
+  </ShoppingCart>
+  <ShoppingCart>
+    <ShoppingCartId>2819369d-ad5e-4a43-8a50-bf23ec4b937d</ShoppingCartId>
+    <Products>
+      <ProductInCart>
+        <PID>CXVMN023932</PID>
+        <Name>Grand Theft Auto: Vice City (PC)</Name>
+        <Price>9.99</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+      <ProductInCart>
+        <PID>CXVMN023932</PID>
+        <Name>Grand Theft Auto: Vice City (PC)</Name>
+        <Price>9.99</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+      <ProductInCart>
+        <PID>CXVMN023932</PID>
+        <Name>Grand Theft Auto: Vice City (PC)</Name>
+        <Price>9.99</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+      <ProductInCart>
+        <PID>CXVMN023932</PID>
+        <Name>Grand Theft Auto: Vice City (PC)</Name>
+        <Price>9.99</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+      <ProductInCart>
+        <PID>CXVMN023932</PID>
+        <Name>Grand Theft Auto: Vice City (PC)</Name>
+        <Price>9.99</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+    </Products>
+    <Coupon xsi:nil="true" />
+    <DateRegistered>2019-11-17T19:44:21.6520728+01:00</DateRegistered>
+  </ShoppingCart>
+  <ShoppingCart>
+    <ShoppingCartId>12ab3440-a66f-4ce7-bb22-cefe06614074</ShoppingCartId>
+    <Products>
+      <ProductInCart>
+        <PID>LPQW90EI931</PID>
+        <Name>Legion By Lenovo Y540 15.6" Gaming Laptop</Name>
+        <Price>849</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+      <ProductInCart>
+        <PID>CBSF98UF8390</PID>
+        <Name>Need for Speed Payback</Name>
+        <Price>24.46</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+      <ProductInCart>
+        <PID>CSA87SAC902</PID>
+        <Name>Grand Theft Auto V</Name>
+        <Price>21.45</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+      <ProductInCart>
+        <PID>F438935U4944</PID>
+        <Name>Bepis</Name>
+        <Price>1337.2</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+      <ProductInCart>
+        <PID>RIJ430934944</PID>
+        <Name>Logitech G533 Wireless Gaming Headset</Name>
+        <Price>65.2</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+      <ProductInCart>
+        <PID>98ER2UY3R23</PID>
+        <Name>Fallout 76</Name>
+        <Price>1.5</Price>
+        <Amount>4</Amount>
+      </ProductInCart>
+    </Products>
+    <Coupon>
+      <Code>1224C4C</Code>
+      <Discount>0.29</Discount>
+    </Coupon>
+    <DateRegistered>2019-11-17T19:46:52.7658385+01:00</DateRegistered>
+  </ShoppingCart>
+  <ShoppingCart>
+    <ShoppingCartId>f9790981-9eae-4855-8ac5-af841895880f</ShoppingCartId>
+    <Products>
+      <ProductInCart>
+        <PID>QWEO922292</PID>
+        <Name>Omen Intel Core i7 - 9750H</Name>
+        <Price>892.99</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+      <ProductInCart>
+        <PID>98ER2UY3R23</PID>
+        <Name>Fallout 76</Name>
+        <Price>1.5</Price>
+        <Amount>1</Amount>
+      </ProductInCart>
+    </Products>
+    <Coupon xsi:nil="true" />
+    <DateRegistered>2019-11-17T19:58:52.81835+01:00</DateRegistered>
+  </ShoppingCart>
+</ArrayOfShoppingCart>

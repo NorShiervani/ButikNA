@@ -69,6 +69,11 @@ namespace ProjektButikNA
             PageContainer.Content = new OrderHistory();
         }
 
+        private void ShowProducts(object sender, RoutedEventArgs e)
+        {
+            PageContainer.Content = new ManageProducts();
+        }
+
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();

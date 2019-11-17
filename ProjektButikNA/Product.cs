@@ -28,9 +28,9 @@ namespace ProjektButikNA
 
         }
 
-        public string PID { get => pid; private set => pid = value; }
-        public string Name { get => name; private set => name = value; }
-        public double Price { get => price; private set => price = value; }
+        public string PID { get => pid; set => pid = value; }
+        public string Name { get => name; set => name = value; }
+        public double Price { get => price; set => price = value; }
 
         public static void SaveProducts(List<Product> products)
         {
@@ -80,6 +80,36 @@ namespace ProjektButikNA
             List<Product> filteredProducts = GetProducts().Where(x => x.Name.ToLower().Contains(productname.ToLower())).ToList();
 
             return filteredProducts;
+        }
+
+        public static void Save(List<Product> products)
+        {
+            using (var stream = new FileStream(FILE_PATH, FileMode.Create))
+            {
+                XmlSerializer XML = new XmlSerializer(typeof(List<Product>));
+                XML.Serialize(stream, products);
+            }
+        }
+
+        public static bool productExist(string pid)
+        {
+            Product product =  GetProducts().Where(x => x.PID == pid).FirstOrDefault();
+
+            return product != null;
+        }
+
+        public void AddToFile()
+        {
+            List<Product> savedProducts = GetProducts();
+            savedProducts.Add(this);
+            Save(savedProducts);
+        }
+
+        public static void RemoveFromFile(string pid)
+        {
+            List<Product> updatedProducts = GetProducts();
+            updatedProducts.RemoveAll(x => x.PID == pid);
+            Save(updatedProducts);
         }
     }
 }

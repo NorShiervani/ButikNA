@@ -77,6 +77,9 @@
     <Compile Include="CouponsWindow.xaml.cs">
       <DependentUpon>CouponsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManageProducts.xaml.cs">
+      <DependentUpon>ManageProducts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OrderFinished.xaml.cs">
       <DependentUpon>OrderFinished.xaml</DependentUpon>
     </Compile>
@@ -104,6 +107,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManageProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="OrderFinished.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,5 +163,17 @@
   <ItemGroup>
     <Resource Include="Images\maximizeicon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ExampleData\Coupons.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ExampleData\Products.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ExampleData\ShoppingCart.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

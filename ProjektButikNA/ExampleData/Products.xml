@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Product>
+		<PID>RU38T43JITRIK</PID>
+		<Name>Corsair M65 Pro RGB</Name>
+		<Price>59.99</Price>
+	</Product>
+	<Product>
+	<PID>RIJ430934944</PID>
+		<Name>Logitech G533 Wireless Gaming Headset</Name>
+		<Price>65.20</Price>
+	</Product>
+	<Product>
+	<PID>QWEO922292</PID>
+		<Name>Omen Intel Core i7 - 9750H</Name>
+		<Price>892.99</Price>
+	</Product>
+	<Product>
+	<PID>98ER2UY3R23</PID>
+		<Name>Fallout 76</Name>
+		<Price>1.50</Price>
+	</Product>
+	<Product>
+	<PID>LPQW90EI931</PID>
+		<Name>Legion By Lenovo Y540 15.6" Gaming Laptop</Name>
+		<Price>849.00</Price>
+	</Product>
+	<Product>
+	<PID>QWMKJ021222</PID>
+		<Name>HP Omen 15-ax250wm</Name>
+		<Price>897.20</Price>
+	</Product>
+	<Product>
+	<PID>CSA87SAC902</PID>
+		<Name>Grand Theft Auto V</Name>
+		<Price>21.45</Price>
+	</Product>
+	<Product>
+	<PID>CXVMN023932</PID>
+		<Name>Grand Theft Auto: Vice City (PC)</Name>
+		<Price>9.99</Price>
+	</Product>
+	<Product>
+	<PID>IIR488438NC</PID>
+		<Name>Tom Clancy's: The Division Gold Edition</Name>
+		<Price>59.99</Price>
+	</Product>
+	<Product>
+	<PID>CBSF98UF8390</PID>
+		<Name>Need for Speed Payback</Name>
+		<Price>24.46</Price>
+	</Product>
+	<Product>
+	<PID>F438935U4944</PID>
+		<Name>Bepis</Name>
+		<Price>1337.20</Price>
+	</Product>  
+</ArrayOfProduct>
