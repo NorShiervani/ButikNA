@@ -28,9 +28,9 @@ namespace ProjektButikNA
 
         }
 
-        public string PID { get => pid; set => pid = value; }
-        public string Name { get => name; set => name = value; }
-        public double Price { get => price; set => price = value; }
+        public string PID { get => pid; private set => pid = value; }
+        public string Name { get => name; private set => name = value; }
+        public double Price { get => price; private set => price = value; }
 
         public static void SaveProducts(List<Product> products)
         {
@@ -75,22 +75,9 @@ namespace ProjektButikNA
             return products;
         }
 
-        public static List<Product> GetProductsByFilter(string filter)
+        public static List<Product> GetProductsByFilter(string productname)
         {
-            List<Product> filteredProducts = new List<Product>();
-            XmlDocument doc = GetProductXmlDocument();
-
-            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-            {
-                string pid = node["PID"].InnerText;
-                string name = node["Name"].InnerText;
-                double price = double.Parse(node["Price"].InnerText);
-
-                if (name.ToLower().Contains(filter.ToLower()))
-                {
-                    filteredProducts.Add(new Product(pid, name, price));
-                }
-            }
+            List<Product> filteredProducts = GetProducts().Where(x => x.Name.ToLower().Contains(productname.ToLower())).ToList();
 
             return filteredProducts;
         }

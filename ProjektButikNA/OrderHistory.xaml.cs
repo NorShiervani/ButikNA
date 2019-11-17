@@ -83,7 +83,7 @@ namespace ProjektButikNA
                 }
             }
 
-            FilterOrderByDate();
+            FilterOrderList();
         }
 
         private void DateFromChanged(object sender, SelectionChangedEventArgs e)
@@ -96,28 +96,25 @@ namespace ProjektButikNA
                 }
             }
 
-            FilterOrderByDate();
+            FilterOrderList();
         }
 
-        private void FilterOrderByDate()
+        private void FilterOrderList()
         {
             if (dgvOrderHistory != null)
             {
                 dgvOrderHistory.Items.Clear();
                 List<ShoppingCart> filteredShoppingCart = ShoppingCart.FilterShoppingList(dpDateFrom.SelectedDate ?? DateTime.Now, dpDateTo.SelectedDate ?? DateTime.Now);
 
-                if (filteredShoppingCart != null)
+                foreach (ShoppingCart shoppingCarts in filteredShoppingCart)
                 {
-                    foreach (ShoppingCart shoppingCarts in filteredShoppingCart)
+                    try
                     {
-                        try
-                        {
-                            dgvOrderHistory.Items.Add(shoppingCarts);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "Failed filtering order list");
-                        }
+                        dgvOrderHistory.Items.Add(shoppingCarts);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Failed filtering order list");
                     }
                 }
             }  

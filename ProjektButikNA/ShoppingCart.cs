@@ -128,8 +128,8 @@ namespace ProjektButikNA
 
         public static List<ShoppingCart> FilterShoppingList(DateTime datefrom, DateTime dateto)
         {
-            List<ShoppingCart> filteredCart = GetShoppingCarts().Where(x => x.DateRegistered >= datefrom && x.DateRegistered <= dateto).ToList();
-            return filteredCart;
+            List<ShoppingCart> filteredCarts = GetShoppingCarts().Where(x => x.DateRegistered >= datefrom && x.DateRegistered <= dateto).ToList();
+            return filteredCarts;
         }
 
         public static void Save(List<ShoppingCart> shoppingCarts)

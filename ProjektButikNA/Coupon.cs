@@ -26,8 +26,8 @@ namespace ProjektButikNA
 
         }
 
-        public string Code { get => code; set => code = value; }
-        public double Discount { get => discount; set => discount = value; }
+        public string Code { get => code; private set => code = value; }
+        public double Discount { get => discount; private set => discount = value; }
 
         public static void SaveCoupons(List<Coupon> coupons)
         {

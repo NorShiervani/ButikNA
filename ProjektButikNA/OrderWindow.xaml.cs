@@ -44,9 +44,18 @@ namespace ProjektButikNA
         private void FilterProductList(object sender, TextChangedEventArgs e)
         {
             dgvProducts.Items.Clear();
-            foreach (Product product in Product.GetProductsByFilter(txtbFilterProducts.Text))
+            List<Product> filteredProducts = Product.GetProductsByFilter(txtbFilterProducts.Text);
+
+            foreach (Product product in filteredProducts)
             {
-                dgvProducts.Items.Add(product);
+                try
+                {
+                    dgvProducts.Items.Add(product);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Failed filtering and adding product to list");
+                }
             }
         }
 
