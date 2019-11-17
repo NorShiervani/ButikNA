@@ -11,12 +11,14 @@ namespace ProjektButikNA
 {
     public class Product
     {
+        private string pid;
         private string name;
         private double price;
-        public const string FILE_PATH = "Products.xml";
+        public const string FILE_PATH = "C:\\Windows\\Temp\\Products.xml";
 
-        public Product(string name, double price)
+        public Product(string pid, string name, double price)
         {
+            this.pid = pid;
             this.name = name;
             this.price = price;
         }
@@ -26,6 +28,7 @@ namespace ProjektButikNA
 
         }
 
+        public string PID { get => pid; set => pid = value; }
         public string Name { get => name; set => name = value; }
         public double Price { get => price; set => price = value; }
 
@@ -63,9 +66,10 @@ namespace ProjektButikNA
 
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
+                string pid = node["PID"].InnerText;
                 string name = node["Name"].InnerText;
                 double price = double.Parse(node["Price"].InnerText);
-                products.Add(new Product(name, price));
+                products.Add(new Product(pid, name, price));
             }
 
             return products;
@@ -78,12 +82,13 @@ namespace ProjektButikNA
 
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
+                string pid = node["PID"].InnerText;
                 string name = node["Name"].InnerText;
                 double price = double.Parse(node["Price"].InnerText);
 
                 if (name.ToLower().Contains(filter.ToLower()))
                 {
-                    filteredProducts.Add(new Product(name, price));
+                    filteredProducts.Add(new Product(pid, name, price));
                 }
             }
 

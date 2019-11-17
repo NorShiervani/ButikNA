@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ProjektButikNA"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="CouponsWindow">
+      Title="CouponsWindow" Background="White">
 
     <Grid Margin="15">
         <Grid.RowDefinitions>

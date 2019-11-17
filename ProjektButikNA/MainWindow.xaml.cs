@@ -61,7 +61,7 @@ namespace ProjektButikNA
 
         private void ShowNewOrder(object sender, RoutedEventArgs e)
         {
-            PageContainer.Content = new OrderWindow();
+            PageContainer.Content = new OrderWindow(PageContainer);
         }
 
         private void ShowOrderHistory(object sender, RoutedEventArgs e)

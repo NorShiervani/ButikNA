@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ProjektButikNA"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="OrderHistory">
+      Title="OrderHistory" Background="White">
     <Border>
         <Grid Margin="15">
             <Grid.RowDefinitions>
@@ -29,7 +29,7 @@
                 <DatePicker FontSize="16" Foreground="Purple" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" />
                 <Button Width="140" Height="30" FontSize="14" Grid.Column="4" Content="Search" Background="Purple" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" />
             </Grid>
-            <DataGrid x:Name="dgvOrderHistory" Grid.Row="2" HorizontalAlignment="Left" IsReadOnly="true">
+            <DataGrid x:Name="dgvOrderHistory" Grid.Row="2" HorizontalAlignment="Left" IsReadOnly="true" ItemsSource="{Binding ShoppingCart}">
                 <DataGrid.Resources>
                     <Style TargetType="{ x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="Purple" />
@@ -53,11 +53,11 @@
                 </DataGrid.Resources>
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="#" Width="0.5*"/>
-                    <DataGridTextColumn Header="Date created" Width="*" />
-                    <DataGridTextColumn Header="Items" Width="*" />
-                    <DataGridTextColumn Header="Coupon" Width="*" />
-                    <DataGridTextColumn Header="Total cost" Width="*" />
+                    <DataGridTextColumn Header="#" Width="0.5*" Binding="{Binding ShoppingCartId}" />
+                    <DataGridTextColumn Header="Date registered" Width="*" Binding="{Binding DateRegistered}" />
+                    <DataGridTextColumn Header="Items" Width="*" Binding="{Binding Products}"/>
+                    <DataGridTextColumn Header="Coupon" Width="*" Binding="{Binding Coupon.Discount}"/>
+                    <DataGridTextColumn Header="Total cost (Incl. Coupon)" Width="*" Binding="{Binding TotalCostInclCoupon}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

@@ -13,7 +13,7 @@ namespace ProjektButikNA
     {
         private string code;
         private double discount;
-        public const string FILE_PATH = "Coupons.xml";
+        public const string FILE_PATH = "C:\\Windows\\Temp\\Coupons.xml";
 
         public Coupon(string code, double discount)
         {
@@ -69,6 +69,12 @@ namespace ProjektButikNA
             }
 
             return coupons;
+        }
+
+        public static Coupon GetCoupon(string code)
+        {
+            Coupon coupon = GetCoupons().Where(x => x.Code == code).FirstOrDefault();
+            return coupon;
         }
     }
 }

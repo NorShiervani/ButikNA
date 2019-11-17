@@ -23,6 +23,22 @@ namespace ProjektButikNA
         public OrderHistory()
         {
             InitializeComponent();
+            LoadShoppingCarts();
+        }
+
+        void LoadShoppingCarts()
+        {
+            foreach (ShoppingCart shoppingCarts in ShoppingCart.GetShoppingCarts())
+            {
+                try
+                {
+                    dgvOrderHistory.Items.Add(shoppingCarts);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error adding order to list");
+                }            
+            }
         }
     }
 }
