@@ -49,6 +49,7 @@ namespace ProjektButikNA
                 }
             }
         }
+        [XmlElement(IsNullable = true)]
         public Coupon Coupon { get => coupon; set => coupon = value; }
         public DateTime DateRegistered { get => dateRegistered; set => dateRegistered = value; }
         public double TotalCostInclCoupon { get => GetTotalCost(true); }
@@ -100,8 +101,9 @@ namespace ProjektButikNA
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
                 string shoppingCartId = node["ShoppingCartId"].InnerText;
+
                 ObservableCollection<ProductInCart> products = new ObservableCollection<ProductInCart>();
-                foreach (XmlNode collectionNode in node["Products"])
+                foreach (XmlNode collectionNode in node["Products"].ChildNodes)
                 {
                     string pid = collectionNode["PID"].InnerText;
                     string name = collectionNode["Name"].InnerText;
@@ -109,19 +111,12 @@ namespace ProjektButikNA
                     int amount = int.Parse(collectionNode["Amount"].InnerText);
                     products.Add(new ProductInCart(pid, name, price, amount));
                 }
-                Coupon coupon = null;
-                if (node["Coupon"] != null)
-                {
-                    foreach (XmlNode couponNode in node["Coupon"])
-                    {
-                        if (couponNode["Code"] != null)
-                        {
-                            string code = couponNode["Code"].InnerText;
-                            double discount = double.Parse(couponNode["Discount"].InnerText);
 
-                            coupon = new Coupon(code, discount);
-                        }
-                    }
+                Coupon coupon = null;
+
+                if (node["Coupon"].HasChildNodes)
+                {
+                    coupon = new Coupon(node["Coupon"]["Code"].InnerText, double.Parse(node["Coupon"]["Discount"].InnerText));
                 }
                 
                 DateTime dateRegistered = DateTime.Parse(node["DateRegistered"].InnerText);
@@ -129,6 +124,12 @@ namespace ProjektButikNA
             }
 
             return shoppingCarts;
+        }
+
+        public static List<ShoppingCart> FilterShoppingList(DateTime datefrom, DateTime dateto)
+        {
+            List<ShoppingCart> filteredCart = GetShoppingCarts().Where(x => x.DateRegistered >= datefrom && x.DateRegistered <= dateto).ToList();
+            return filteredCart;
         }
 
         public static void Save(List<ShoppingCart> shoppingCarts)
