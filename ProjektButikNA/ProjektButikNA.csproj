@@ -80,6 +80,9 @@
     <Compile Include="ManageProducts.xaml.cs">
       <DependentUpon>ManageProducts.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OrderFinished.xaml.cs">
+      <DependentUpon>OrderFinished.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OrderHistory.xaml.cs">
       <DependentUpon>OrderHistory.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ManageProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrderFinished.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
