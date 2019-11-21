@@ -20,6 +20,6 @@ namespace ProjektButikNA
 
         }
 
-        public int Amount { get => amount; set => amount = value; }
+        public int Amount { get => amount; set => amount = value < 0 ? 0 : value; }
     }
 }
