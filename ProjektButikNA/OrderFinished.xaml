@@ -11,13 +11,14 @@
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
             <RowDefinition Height="10*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="1" Grid.Column="1" >
             <Grid.RowDefinitions>
@@ -86,5 +87,7 @@
                 </DataGrid>
             </Grid>
         </Grid>
+        <Button x:Name="btnViewOrder" Width="130" Height="30" FontSize="14" Grid.Column="1" Grid.Row="2" Content="View orders" Background="Purple" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Click="ViewOrderHistory"/>
+        <Button x:Name="btnNewOrder" Width="130" Height="30" FontSize="14" Grid.Column="1" Grid.Row="2" Content="Return" Background="White" Foreground="Purple" VerticalAlignment="Center" HorizontalAlignment="Left" Click="NewOrder"/>
     </Grid>
 </Page>

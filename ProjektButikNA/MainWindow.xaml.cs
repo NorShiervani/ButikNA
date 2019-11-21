@@ -76,7 +76,14 @@ namespace ProjektButikNA
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            try
+            {
+                DragMove();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

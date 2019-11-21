@@ -22,12 +22,13 @@ namespace ProjektButikNA
     {
 
         ShoppingCart shoppingCart;
+        Frame parent;
 
-        public OrderFinished(ShoppingCart shoppingcart)
+        public OrderFinished(ShoppingCart shoppingcart, Frame parent)
         {
-
             InitializeComponent();
             this.shoppingCart = shoppingcart;
+            this.parent = parent;
             DataContext = shoppingcart;
             DisplayOrderDetails();
         }
@@ -41,8 +42,18 @@ namespace ProjektButikNA
             }
             txtBTotalCost.Text = shoppingCart.GetTotalCost(false).ToString();
             txtBTotalCostCoupon.Text = shoppingCart.GetTotalCost(true).ToString();
+        }
 
+        private void NewOrder(object sender, RoutedEventArgs e)
+        {
+            OrderWindow orderWindow = new OrderWindow(parent);
+            parent.Content = orderWindow;
+        }
 
+        private void ViewOrderHistory(object sender, RoutedEventArgs e)
+        {
+            OrderHistory orderHistory = new OrderHistory();
+            parent.Content = orderHistory;
         }
     }
 }

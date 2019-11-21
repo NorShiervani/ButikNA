@@ -104,7 +104,7 @@ namespace ProjektButikNA
         {
             shoppingCart.DateRegistered = DateTime.Now;
             shoppingCart.ShoppingCartId = Guid.NewGuid().ToString();
-            OrderFinished orderFinished = new OrderFinished(shoppingCart);
+            OrderFinished orderFinished = new OrderFinished(shoppingCart, parent);
             shoppingCart.AddToFile();
             parent.Content = orderFinished;
         }
