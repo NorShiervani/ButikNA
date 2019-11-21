@@ -18,7 +18,7 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Order History" FontSize="25" Foreground="Purple" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Text="Manage products" FontSize="25" Foreground="Purple" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Grid Grid.Row="1" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="120"/>

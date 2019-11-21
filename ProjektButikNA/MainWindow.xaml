@@ -97,7 +97,7 @@
                     <ListViewItem Height="60" Selected="ShowProducts">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Food"  Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White"/>
-                            <TextBlock Text="Tools" Foreground="AliceBlue"  VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Manage products" Foreground="AliceBlue"  VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
