@@ -80,9 +80,6 @@
     <Compile Include="ManageProducts.xaml.cs">
       <DependentUpon>ManageProducts.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OrderFinished.xaml.cs">
-      <DependentUpon>OrderFinished.xaml</DependentUpon>
-    </Compile>
     <Compile Include="OrderHistory.xaml.cs">
       <DependentUpon>OrderHistory.xaml</DependentUpon>
     </Compile>
@@ -108,10 +105,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ManageProducts.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="OrderFinished.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,9 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\closeicon.png" />
-    <Resource Include="Images\closeicon2.png" />
     <Resource Include="Images\minimizeicon.png" />
-    <Resource Include="Images\minimizeicon2.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\maximizeicon.png" />
