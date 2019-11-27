@@ -76,5 +76,21 @@ namespace ProjektButikNA
             Coupon coupon = GetCoupons().Where(x => x.Code == code).FirstOrDefault();
             return coupon;
         }
+
+        public static void Save(List<Coupon> coupons)
+        {
+            using (var stream = new FileStream(FILE_PATH, FileMode.Create))
+            {
+                XmlSerializer XML = new XmlSerializer(typeof(List<Coupon>));
+                XML.Serialize(stream, coupons);
+            }
+        }
+
+        public void AddToFile()
+        {
+            List<Coupon> savedCoupons = GetCoupons();
+            savedCoupons.Add(this);
+            Save(savedCoupons);
+        }
     }
 }

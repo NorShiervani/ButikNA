@@ -76,7 +76,7 @@ namespace ProjektButikNA
         {
             if (!Product.productExist(txtBPIDdelete.Text))
             {
-                MessageBox.Show("Product with " + txtBPIDdelete.Text + " doesn't exists.");
+                MessageBox.Show("Product with id '" + txtBPIDdelete.Text + "' doesn't exists.");
                 GenerateNewPID();
             }
             else if (txtBPIDdelete.Text == "")

@@ -24,6 +24,7 @@ namespace ProjektButikNA
         {
             InitializeComponent();
             System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+            LoadExampleData(20);
         }
 
         private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
@@ -84,6 +85,39 @@ namespace ProjektButikNA
             catch
             {
 
+            }
+        }
+
+        private void LoadExampleData(int amount)
+        {
+            Random random = new Random();
+
+            if (Product.GetProducts().Count() < 1)
+            {
+                string[] productNames = new string[] { "HP", "Computer", "Clean", "Game", "Screen", "Controller", "Camera", "Console", "Mouse", "Keyboard", "Device" };
+
+                for (int i = 0; i < amount; i++)
+                {
+                    string PID = Guid.NewGuid().ToString().Substring(1, 6).ToUpper();
+                    string productName = productNames[random.Next(productNames.Count())] + " " + productNames[random.Next(productNames.Count())];
+                    double price = random.Next(10, 10000);
+                    Product product = new Product(PID, productName, price);
+
+                    product.AddToFile();
+                }
+
+            }
+
+            if (Coupon.GetCoupons().Count() < 1)
+            {
+                for (int i = 0; i < amount; i++)
+                {
+                    string code = Guid.NewGuid().ToString().Substring(1, 4).ToUpper();
+                    double discount = Math.Round(random.NextDouble(), 2);
+                    Coupon coupon = new Coupon(code, discount);
+
+                    coupon.AddToFile();
+                }
             }
         }
     }
