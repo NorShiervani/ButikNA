@@ -48,14 +48,7 @@ namespace ProjektButikNA
 
             foreach (Product product in filteredProducts)
             {
-                try
-                {
-                    dgvProducts.Items.Add(product);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Failed filtering and adding product to list");
-                }
+                dgvProducts.Items.Add(product);
             }
         }
 

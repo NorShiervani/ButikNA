@@ -33,14 +33,7 @@ namespace ProjektButikNA
 
             foreach (Product product in Product.GetProducts())
             {
-                try
-                {
-                    dgvProducts.Items.Add(product);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Failed loading and adding product to list");
-                }
+                dgvProducts.Items.Add(product);
             }
         }
 
@@ -85,16 +78,9 @@ namespace ProjektButikNA
             }
             else
             {
-                try
-                {
-                    Product.RemoveFromFile(txtBPIDdelete.Text);
-                    LoadProducts();
-                    MessageBox.Show("Deleted product.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error deleting product");
-                }
+                Product.RemoveFromFile(txtBPIDdelete.Text);
+                LoadProducts();
+                MessageBox.Show("Deleted product with id '" + txtBPIDdelete.Text + "'.");
             }
         }
 
@@ -110,14 +96,7 @@ namespace ProjektButikNA
 
             foreach (Product product in filteredProducts)
             {
-                try
-                {
-                    dgvProducts.Items.Add(product);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Failed filtering and adding product to list");
-                }
+                dgvProducts.Items.Add(product);
             }
         }
     }

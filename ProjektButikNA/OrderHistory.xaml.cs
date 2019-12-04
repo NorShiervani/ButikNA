@@ -32,35 +32,25 @@ namespace ProjektButikNA
         {
             foreach (ShoppingCart shoppingCarts in ShoppingCart.GetShoppingCarts())
             {
-                try
-                {
-                    dgvOrderHistory.Items.Add(shoppingCarts);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Failed loading and adding order to list");
-                }            
+                dgvOrderHistory.Items.Add(shoppingCarts);
             }
         }
 
         private void SelectOrder(object sender, SelectionChangedEventArgs e)
         {
-            try
+            if (dgvOrderHistory.SelectedItem != null)
             {
-                shoppingCart = (ShoppingCart) dgvOrderHistory.SelectedItem;
+                shoppingCart = (ShoppingCart)dgvOrderHistory.SelectedItem;
                 DisplayOrderDetails();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Failed selecting order");
-            }
+            }  
         }
 
         private void DisplayOrderDetails()
         {
             DataContext = shoppingCart;
             txtBId.Text = shoppingCart.ShoppingCartId;
-            txtBOrderDate.Text = shoppingCart.DateRegistered.ToString("yyyyMMdd"); ;
+            txtBOrderDate.Text = shoppingCart.DateRegistered.ToString("yyyyMMdd");
+
             if (shoppingCart.Coupon != null)
             {
                 txtBCouponDetails.Text = shoppingCart.Coupon.Code + " (" + (shoppingCart.Coupon.Discount * 100) + "%)";
@@ -69,6 +59,7 @@ namespace ProjektButikNA
             {
                 txtBCouponDetails.Text = "None";
             }
+
             txtBTotalCost.Text = shoppingCart.GetTotalCost(false).ToString();
             txtBTotalCostCoupon.Text = shoppingCart.GetTotalCost(true).ToString();
         }
@@ -108,14 +99,7 @@ namespace ProjektButikNA
 
                 foreach (ShoppingCart shoppingCarts in filteredShoppingCart)
                 {
-                    try
-                    {
-                        dgvOrderHistory.Items.Add(shoppingCarts);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Failed filtering order list");
-                    }
+                    dgvOrderHistory.Items.Add(shoppingCarts);
                 }
             }  
         }
