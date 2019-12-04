@@ -12,7 +12,7 @@ namespace ProjektButikNA
         
         public ProductInCart(string pid, string name, double price, int amount) : base(pid, name, price)
         {
-            this.amount = amount;
+            Amount = amount;
         }
 
         public ProductInCart()
@@ -20,6 +20,23 @@ namespace ProjektButikNA
 
         }
 
-        public int Amount { get => amount; set => amount = value < 0 ? 0 : value; }
+        public int Amount
+        {
+            get
+            {
+                return amount;
+            }
+            set
+            {
+                if (value <= 0)
+                {
+                    amount = 1;
+                }
+                else
+                {
+                    amount = value;
+                }
+            }
+        }
     }
 }

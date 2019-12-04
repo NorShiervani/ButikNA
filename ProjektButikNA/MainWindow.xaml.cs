@@ -23,8 +23,8 @@ namespace ProjektButikNA
         public MainWindow()
         {
             InitializeComponent();
-            LoadExampleData(20);
             System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+            LoadExampleData(20);
         }
 
         private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)

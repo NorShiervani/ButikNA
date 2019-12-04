@@ -57,7 +57,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock Text="Added products" FontSize="16" Foreground="Purple" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" />
-        <DataGrid x:Name="dgvProductsInCart" Grid.Column="2" Grid.Row="2" ItemsSource="{Binding Path=Products}" AutoGenerateColumns="False" >
+        <DataGrid x:Name="dgvProductsInCart" Grid.Column="2" Grid.Row="2" ItemsSource="{Binding Path=Products}" AutoGenerateColumns="False">
             <DataGrid.Resources>
                 <Style TargetType="{ x:Type DataGridColumnHeader }">
                     <Setter Property="Background" Value="Purple" />

@@ -17,8 +17,8 @@ namespace ProjektButikNA
 
         public Coupon(string code, double discount)
         {
-            this.code = code;
-            this.discount = discount;
+            Code = code;
+            Discount = discount;
         }
 
         public Coupon()

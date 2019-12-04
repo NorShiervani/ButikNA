@@ -18,9 +18,9 @@ namespace ProjektButikNA
 
         public Product(string pid, string name, double price)
         {
-            this.pid = pid;
-            this.name = name;
-            this.price = price;
+            PID = pid;
+            Name = name;
+            Price = price;
         }
 
         public Product()
@@ -30,7 +30,24 @@ namespace ProjektButikNA
 
         public string PID { get => pid; set => pid = value; }
         public string Name { get => name; set => name = value; }
-        public double Price { get => price; set => price = value; }
+        public double Price
+        {
+            get
+            {
+                return price;
+            }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException("The price must be at least 1 or higher.");
+                }
+                else
+                {
+                    price = value;
+                }
+            }
+        }
 
         public static void SaveProducts(List<Product> products)
         {
